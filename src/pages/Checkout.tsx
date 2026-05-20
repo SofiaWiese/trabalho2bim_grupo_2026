@@ -152,7 +152,10 @@ export default function Checkout() {
 
             <div>
               <p>Produto</p>
-              <p className="text-xs">Descrição</p>
+              <div className="flex gap-2">
+                <p>Descrição </p>
+                <p> x1</p>
+              </div>
             </div>
 
             <span className="ml-auto">R$ 0,00</span>
