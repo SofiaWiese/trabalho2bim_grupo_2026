@@ -21,7 +21,7 @@ interface Icategory {
   updatedAt: string
 }
 
-interface Iproduct {
+export interface Iproduct {
   id: number,
   title: string,
   slug: string,
