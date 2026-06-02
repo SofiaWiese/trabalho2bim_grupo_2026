@@ -1,4 +1,4 @@
-*Integrantes do grupo*
+##Integrantes do grupo
 
 Sofia Pereira Wiese - checkout, 
 
