@@ -1,6 +1,11 @@
 import { useState } from "react";
+import { useStore } from "../hooks/useStore";
 
 export default function Checkout() {
+  const { cart } = useStore();
+  function calculateTotal() {
+    return cart.reduce((total, item) => total + item.price, 0);
+  }
   const [form, setForm] = useState({
     email: "",
     nome: "",
@@ -147,23 +152,27 @@ export default function Checkout() {
         </div>
 
         <div className="bg-[#f0f0f0] p-6 h-fit">
-          <div className="flex gap-4 mb-4">
-            <div className="w-16 h-16 bg-gray-300"></div>
-
-            <div>
-              <p>Produto</p>
-              <div className="flex gap-2">
-                <p>Descrição </p>
-                <p> x1</p>
+          {cart.map((item, indice) => (
+            <div className="flex gap-4 mb-4">
+              <div>
+                <img
+                  src={item.images}
+                  alt={item.title}
+                  className="w-16 h-16 object-cover"
+                />
               </div>
-            </div>
 
-            <span className="ml-auto">R$ 0,00</span>
-          </div>
+              <div>
+                <p>{item.title}</p>
+                <div className="flex gap-2"></div>
+              </div>
+              <span className="ml-auto">{item.price}</span>
+            </div>
+          ))}
 
           <div className="flex justify-between text-sm mb-2">
             <span>Subtotal</span>
-            <span>R$ 0,00</span>
+            <span>{calculateTotal()}</span>
           </div>
 
           <div className="flex justify-between text-sm mb-2">
@@ -173,7 +182,7 @@ export default function Checkout() {
 
           <div className="flex justify-between font-semibold mt-4">
             <span>Total</span>
-            <span>R$ 0,00</span>
+            <span>{calculateTotal()}</span>
           </div>
         </div>
       </div>
