@@ -5,22 +5,20 @@ import type { Iproduct } from "../context/StoreContext";
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const { getProductById, addToCart } = useStore()
-  const[product, setProduct] = useState<Iproduct>()
-  const loadProduct= async ()=>{
-    if(id){
-      const response = await getProductById(parseInt(id))
-      if(response){
-
-        setProduct(response)
-        setImagemPrincipal(response.images[0])
+  const { getProductById, addToCart } = useStore();
+  const [product, setProduct] = useState<Iproduct>();
+  const loadProduct = async () => {
+    if (id) {
+      const response = await getProductById(parseInt(id));
+      if (response) {
+        setProduct(response);
+        setImagemPrincipal(response.images[0]);
       }
     }
-  }
-  useEffect(()=>{
-    loadProduct()
-  },[])
- 
+  };
+  useEffect(() => {
+    loadProduct();
+  }, []);
 
   const [tamanho, setTamanho] = useState(37);
   const [quantidade, setQuantidade] = useState(1);
@@ -37,7 +35,7 @@ const ProductDetail = () => {
     "https://flavios.vtexassets.com/arquivos/ids/226746-1600-1600?v=638312696233870000&width=1600&height=1600&aspect=true",
   ];
 
-  const [imagemPrincipal, setImagemPrincipal] = useState<string>('');
+  const [imagemPrincipal, setImagemPrincipal] = useState<string>("");
 
   const [fade, setFade] = useState(false);
 
@@ -100,13 +98,15 @@ const ProductDetail = () => {
             </h2>
 
             <p className="text-sm md:text-base leading-6 md:leading-8 text-gray-700">
-              {product? product.description:''}
+              {product ? product.description : ""}
             </p>
           </div>
         </div>
 
         <div className="flex flex-col gap-4 w-full md:w-[350px]">
-          <h2 className="text-xl md:text-2xl font-bold">{product? product.title:''}</h2>
+          <h2 className="text-xl md:text-2xl font-bold">
+            {product ? product.title : ""}
+          </h2>
 
           <div className=" gap-2 text-yellow-500 text-sm">
             {renderStars(avaliacao)}
@@ -150,17 +150,17 @@ const ProductDetail = () => {
               <button onClick={() => setQuantidade(quantidade + 1)}>+</button>
             </div>
 
-                  <button
-            onClick={handleAddToCart}
-            className={`
+            <button
+              onClick={() => addToCart(product!)}
+              className={`
               bg-black text-white px-6 py-3 rounded
               transition-all duration-300
               hover:scale-105 active:scale-95
-              ${added ? "bg-green-600 scale-110" : ""}
+              
             `}
-          >
-            {added ? "Adicionado ✔" : "Adicionar ao carrinho"}
-          </button>
+            >
+              {/* {added ? "Adicionado ✔" : "Adicionar ao carrinho"} */}
+            </button>
           </div>
         </div>
       </div>
