@@ -150,17 +150,9 @@ const ProductDetail = () => {
               <button onClick={() => setQuantidade(quantidade + 1)}>+</button>
             </div>
 
-                  <button
-            onClick={handleAddToCart}
-            className={`
-              bg-black text-white px-6 py-3 rounded
-              transition-all duration-300
-              hover:scale-105 active:scale-95
-              ${added ? "bg-green-600 scale-110" : ""}
-            `}
-          >
-            {added ? "Adicionado ✔" : "Adicionar ao carrinho"}
-          </button>
+            <button  onClick={()=> {if(product){addToCart(product)}}} className="bg-black text-white px-6 py-3 rounded hover:bg-gray-800 w-full md:w-auto hover:scale-105 transition-all">
+            {added ? "bg-green-600 scale-110" : "Adicionar ao carrinho"}
+            </button>
           </div>
         </div>
       </div>
