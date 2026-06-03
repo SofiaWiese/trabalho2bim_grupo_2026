@@ -1,12 +1,11 @@
-*Integrantes do grupo*
+## Integrantes do grupo
 
-Sofia Pereira Wiese, 
+Sofia Pereira Wiese - checkout, 
 
-Luccas Vicenti Tabaczenski, 
+Luccas Vicenti Tabaczenski - detalhes do produto, 
 
-Ryan Bento Preciliano, 
+Ryan Bento Preciliano - carrinho, 
 
-Heitor Fontana Aguiar,
+Heitor Fontana Aguiar - header e footer,
 
-
-Arthur Fontana Aguiar.
+Arthur Fontana Aguiar - home.

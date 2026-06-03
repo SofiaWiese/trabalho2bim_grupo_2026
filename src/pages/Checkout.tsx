@@ -49,7 +49,7 @@ export default function Checkout() {
             name="email"
             placeholder="E-mail"
             onChange={handleChange}
-            className="w-full border border-gray-300 p-3 mb-3 bg-white"
+            className="w-full border border-gray-300 p-3 mb-3 bg-white rounded "
           />
 
           <div className="p-5">
@@ -60,14 +60,14 @@ export default function Checkout() {
                 name="nome"
                 placeholder="Nome"
                 onChange={handleChange}
-                className="border p-3 bg-white"
+                className="border p-3 bg-white rounded "
               />
 
               <input
                 name="sobrenome"
                 placeholder="Sobrenome"
                 onChange={handleChange}
-                className="border p-3 bg-white"
+                className="border p-3 bg-white rounded "
               />
             </div>
 
@@ -75,28 +75,28 @@ export default function Checkout() {
               name="telefone"
               placeholder="Telefone com DDD"
               onChange={handleChange}
-              className="w-full border p-3 mt-3 bg-white"
+              className="w-full border p-3 mt-3 bg-white rounded "
             />
 
             <input
               name="cep"
               placeholder="CEP"
               onChange={handleChange}
-              className="w-full border p-3 mt-3 bg-white"
+              className="w-full border p-3 mt-3 bg-white rounded "
             />
 
             <input
               name="endereco"
               placeholder="Endereço"
               onChange={handleChange}
-              className="w-full border p-3 mt-3 bg-white"
+              className="w-full border p-3 mt-3 bg-white rounded "
             />
 
             <input
               name="bairro"
               placeholder="Bairro"
               onChange={handleChange}
-              className="w-full border p-3 mt-3 bg-white"
+              className="w-full border p-3 mt-3 bg-white rounded "
             />
 
             <div className="flex gap-3 mt-3">
@@ -104,14 +104,14 @@ export default function Checkout() {
                 name="cidade"
                 placeholder="Cidade"
                 onChange={handleChange}
-                className="border p-3 w-1/2 bg-white"
+                className="border p-3 w-1/2 bg-white rounded "
               />
 
               <input
                 name="estado"
                 placeholder="Estado"
                 onChange={handleChange}
-                className="border p-3 w-1/2 bg-white"
+                className="border p-3 w-1/2 bg-white rounded "
               />
             </div>
 
@@ -120,34 +120,34 @@ export default function Checkout() {
                 name="numero"
                 placeholder="Número"
                 onChange={handleChange}
-                className="border p-3 w-1/2 bg-white"
+                className="border p-3 w-1/2 bg-white rounded "
               />
 
               <input
                 name="complemento"
                 placeholder="Complemento"
                 onChange={handleChange}
-                className="border p-3 w-1/2 bg-white"
+                className="border p-3 w-1/2 bg-white rounded "
               />
             </div>
           </div>
 
           <div className="p-5">
-            <p className="mt-6 mb-2">Dados para nota fiscal</p>
+            <p className="mt-6 mb-2 m-2 rounded ">Dados para nota fiscal</p>
 
             <input
               name="cpf"
               placeholder="CPF ou CNPJ"
               onChange={handleChange}
-              className="w-full border p-3 mb-3 bg-white"
+              className="w-full border p-3 mb-3 bg-white rounded "
             />
           </div>
 
           <button
             onClick={handleSubmit}
-            className="bg-black text-white px-6 py-3 w-full md:w-auto"
+            className="bg-black text-white px-6 py-3 w-full md:w-auto rounded "
           >
-            Continuar para pagamento
+            Concluir a compra
           </button>
         </div>
 
@@ -156,7 +156,7 @@ export default function Checkout() {
             <div className="flex gap-4 mb-4">
               <div>
                 <img
-                  src={item.images}
+                  src={item.images?.[0]}
                   alt={item.title}
                   className="w-16 h-16 object-cover"
                 />
@@ -166,13 +166,13 @@ export default function Checkout() {
                 <p>{item.title}</p>
                 <div className="flex gap-2"></div>
               </div>
-              <span className="ml-auto">{item.price}</span>
+              <span className="ml-auto">R${item.price},00</span>
             </div>
           ))}
 
           <div className="flex justify-between text-sm mb-2">
             <span>Subtotal</span>
-            <span>{calculateTotal()}</span>
+            <span>R${calculateTotal()},00</span>
           </div>
 
           <div className="flex justify-between text-sm mb-2">
@@ -182,7 +182,7 @@ export default function Checkout() {
 
           <div className="flex justify-between font-semibold mt-4">
             <span>Total</span>
-            <span>{calculateTotal()}</span>
+            <span>R${calculateTotal()},00</span>
           </div>
         </div>
       </div>
