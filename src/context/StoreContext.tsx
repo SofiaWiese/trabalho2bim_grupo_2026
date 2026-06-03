@@ -1,5 +1,5 @@
-import { createContext, useState, useEffect, type ReactElement } from 'react';
-import { getProducts, getProductById } from '../services/api';
+import { createContext, useState, useEffect, type ReactElement } from "react";
+import { getProducts, getProductById } from "../services/api";
 
 interface Store {
   products: Iproduct[];
@@ -13,24 +13,24 @@ interface Store {
 export const StoreContext = createContext<Store | null>(null);
 
 interface Icategory {
-  id: number,
-  name: string,
-  slug: string,
-  image: string,
-  creationAt: string,
-  updatedAt: string
+  id: number;
+  name: string;
+  slug: string;
+  image: string;
+  creationAt: string;
+  updatedAt: string;
 }
 
 export interface Iproduct {
-  id: number,
-  title: string,
-  slug: string,
-  price: number,
-  description: string,
-  category: Icategory,
-  images: string[],
-  creationAt: string,
-  updatedAt: string
+  id: number;
+  title: string;
+  slug: string;
+  price: number;
+  description: string;
+  category: Icategory;
+  images: string[];
+  creationAt: string;
+  updatedAt: string;
 }
 
 export function StoreProvider({ children }: { children: ReactElement }) {
@@ -52,7 +52,7 @@ export function StoreProvider({ children }: { children: ReactElement }) {
   };
 
   const removeFromCart = (id: number) => {
-    const productIndex = cart.findIndex(item => item.id === id);
+    const productIndex = cart.findIndex((item) => item.id === id);
     if (productIndex !== -1) {
       const newCart = [...cart];
       newCart.splice(productIndex, 1);
@@ -60,16 +60,17 @@ export function StoreProvider({ children }: { children: ReactElement }) {
     }
   };
 
-
   return (
-    <StoreContext.Provider value={{
-      products,
-      cart,
-      loading,
-      addToCart,
-      removeFromCart,
-      getProductById
-    }}>
+    <StoreContext.Provider
+      value={{
+        products,
+        cart,
+        loading,
+        addToCart,
+        removeFromCart,
+        getProductById,
+      }}
+    >
       {children}
     </StoreContext.Provider>
   );
