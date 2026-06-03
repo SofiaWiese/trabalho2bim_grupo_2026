@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+
 import { useAppNavigation } from "../hooks/useNavigation";
 import { useStore } from "../hooks/useStore";
 
@@ -77,10 +77,3 @@ const Cart = ({ ...props }) => {
 };
 
 export default Cart;
-=======
-const Cart =({...props})=>{
-    return<div {...props}>Cart</div>
-    
-}
-export default Cart
->>>>>>> Stashed changes
