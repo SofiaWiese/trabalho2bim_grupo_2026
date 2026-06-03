@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Menu } from './Menu';
+import { Menu } from './Sidebar';
 
 export const Header = () => {
     const [searchQuery, setSearchQuery] = useState('');
@@ -55,3 +55,4 @@ export const Header = () => {
         </header>
     );
 };
+ export default Header;
