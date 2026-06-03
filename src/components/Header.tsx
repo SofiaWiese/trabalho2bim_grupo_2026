@@ -14,11 +14,10 @@ export const Header = () => {
     return (
         <header className="bg-white shadow-md border-b border-gray-200 sticky top-0 z-50">
             
-            {/* PARTE DE CIMA */}
+          
             <div className="max-w-7xl mx-auto px-4">
                 <div className="flex justify-between items-center h-20 gap-4">
 
-                    {/* Logo */}
                     <img 
                         src="https://www.infoescola.com/wp-content/uploads/2008/07/sapo-561077704.jpg" 
                         alt="Logo" 
@@ -26,7 +25,7 @@ export const Header = () => {
                         onClick={() => navigate('/')}
                     />
 
-                    {/* Busca (some no mobile) */}
+                
                     <form onSubmit={handleSearch} className="hidden md:flex flex-1 max-w-md">
                         <input
                             type="text"
@@ -37,7 +36,6 @@ export const Header = () => {
                         />
                     </form>
 
-                    {/* Carrinho */}
                     <button 
                         onClick={() => navigate('/cart')}
                         className="p-2 hover:bg-gray-100 rounded-lg"
@@ -50,8 +48,8 @@ export const Header = () => {
                 </div>
             </div>
 
-            {/* MENU GRUDADO */}
-            <Menu />
+          
+       
         </header>
     );
 };

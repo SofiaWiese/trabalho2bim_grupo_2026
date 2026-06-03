@@ -3,13 +3,14 @@ import { CiDeliveryTruck } from "react-icons/ci";
 import { PiCreditCardLight } from "react-icons/pi";
 import { GoShieldCheck } from "react-icons/go";
 import { PiWhatsappLogoLight } from "react-icons/pi";
-import { VscSearch } from "react-icons/vsc";
 
 import HomeItens from "../components/HomeItens";
 import ServiceCard from "./ServiceCard";
 import { useAppNavigation } from "../hooks/useNavigation";
 import type { IProduct } from "../interfaces/IProduct";
 import { getProducts } from "../services/api";
+import Header from "../components/Header";
+import { Footer } from "../components/Footer";
 
 const Home = ({ ...props }) => {
   const { goToCart, goToCheckout } = useAppNavigation();
@@ -82,15 +83,9 @@ const Home = ({ ...props }) => {
       {...props}
       className="flex flex-col gap-8 p-5 bg-gray-100 min-h-screen"
     >
+      <Header />
+
       <div className="flex flex-col gap-7">
-        <div className="relative w-full">
-          <div className="w-120 h-12 flex items-center pl-12 rounded-xl border border-gray-300 bg-white text-gray-400">
-            Pesquisar
-          </div>
-
-          <VscSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-xl" />
-        </div>
-
         <div className="flex justify-start gap-3 flex-wrap">
           <button
             className={`px-5 py-2 rounded ${
@@ -188,6 +183,8 @@ const Home = ({ ...props }) => {
           <HomeItens items={produtosTendencias.slice(12, 16)} />
         </section>
       )}
+
+      <Footer />
     </div>
   );
 };
