@@ -1,8 +1,11 @@
 import { useAppNavigation } from "../hooks/useNavigation";
 import { useStore } from "../hooks/useStore";
 
+
 const Cart = ({ ...props }) => {
-  const { goBack } = useAppNavigation();
+  const { goBack, goToCheckout } = useAppNavigation();
+
+
   const { cart } = useStore();
 
   const total = cart.reduce(
@@ -59,7 +62,8 @@ const Cart = ({ ...props }) => {
               <span>R$ {total}</span>
             </div>
 
-            <button className="bg-black text-white py-3 rounded hover:bg-gray-800">
+            <button className="bg-black text-white py-3 rounded hover:bg-gray-800"
+            onClick={goToCheckout}>
               Finalizar compra
             </button>
 

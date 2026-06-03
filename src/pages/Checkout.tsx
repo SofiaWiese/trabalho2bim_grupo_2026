@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useStore } from "../hooks/useStore";
 
+
 export default function Checkout() {
   const { cart } = useStore();
   function calculateTotal() {
