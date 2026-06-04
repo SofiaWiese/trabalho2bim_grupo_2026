@@ -180,10 +180,9 @@ const Home = ({ ...props }) => {
       {mostrarTendencias && (
         <section>
           <h2 className="font-bold text-xl">Tendências</h2>
-          <HomeItens items={produtosTendencias.slice(12, 16)} />
+          <HomeItens items={produtosTendencias.slice(7, 11)} />
         </section>
       )}
-
       <Footer />
     </div>
   );
