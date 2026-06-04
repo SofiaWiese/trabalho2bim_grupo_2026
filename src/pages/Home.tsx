@@ -78,6 +78,10 @@ const Home = ({ ...props }) => {
     (p) => p.category?.name === "Shoes",
   );
 
+const produtosIndicacoes = products.filter(
+  (p) => p.category?.name === "Shoes"
+);
+
   return (
     <div
       {...props}
@@ -132,7 +136,7 @@ const Home = ({ ...props }) => {
 
       {mostrarIndicacoes && (
         <div>
-          <HomeItens items={products.slice(0, 4)} />
+          <HomeItens items={produtosIndicacoes.slice(5, 9)} />
         </div>
       )}
 
